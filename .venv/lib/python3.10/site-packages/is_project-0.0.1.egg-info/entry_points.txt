@@ -1,3 +1,0 @@
-[console_scripts]
-is-project = is_project.main:main
-
