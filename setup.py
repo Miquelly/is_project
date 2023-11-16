@@ -21,6 +21,7 @@ setup(
         "numpy==1.24.4",
         "opencv-python==4.8.0.74",
         "six",
+        "imutils",
     ],
 )
 

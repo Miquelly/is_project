@@ -51,7 +51,7 @@ class Detector:
         return annotations
 
     def draw_detections(self, image, annotations):
-        resized = imutils.resize(image, width=min(500, image.shape[1]))
+        # resized = imutils.resize(image, width=min(500, image.shape[1]))
 
         for obj in annotations.objects:
             x1 = int(obj.region.vertices[0].x)
@@ -59,11 +59,11 @@ class Detector:
             x2 = int(obj.region.vertices[1].x)
             y2 = int(obj.region.vertices[1].y)
 
-            cv2.rectangle(resized, (x1, y1), (x2, y2), (0, 0, 255), 2)
+            cv2.rectangle(image, (x1, y1), (x2, y2), (0, 0, 255), 2)
 
             text = f"Score: {obj.score}"
             cv2.putText(
-                resized,
+                image,
                 text,
                 (x1, y1 - 10),
                 cv2.FONT_HERSHEY_SIMPLEX,
@@ -72,4 +72,4 @@ class Detector:
                 2,
             )
 
-        return resized
+        return image

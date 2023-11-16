@@ -5,7 +5,7 @@ from typing import Tuple
 import imutils
 import cv2
 import numpy as np
-from detector import Detector
+from is_project.detector import Detector
 from is_msgs.image_pb2 import Image
 from is_wire.core import Channel, Subscription, Message, ContentType
 
