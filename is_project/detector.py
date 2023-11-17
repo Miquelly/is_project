@@ -29,8 +29,6 @@ class Detector:
         )
 
     def to_oa(self, results, score, image):
-        resized = imutils.resize(image, width=min(500, image.shape[1]))
-
         annotations = ObjectAnnotations()
         for results, score in zip(results, score):
             item = annotations.objects.add()
@@ -46,13 +44,11 @@ class Detector:
             item.label = "human_face"
             item.score = score
 
-        annotations.resolution.width = resized.shape[1]
-        annotations.resolution.height = resized.shape[0]
+        annotations.resolution.width = image.shape[1]
+        annotations.resolution.height = image.shape[0]
         return annotations
 
     def draw_detections(self, image, annotations):
-        # resized = imutils.resize(image, width=min(500, image.shape[1]))
-
         for obj in annotations.objects:
             x1 = int(obj.region.vertices[0].x)
             y1 = int(obj.region.vertices[0].y)
