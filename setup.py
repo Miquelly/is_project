@@ -7,7 +7,7 @@ setup(
     url="",
     author="miquely",
     license="MIT",
-    packages=["is_project"],
+    packages=["is_project", "is_project.conf"],
     package_dir={"": "."},
     entry_points={
         "console_scripts": [

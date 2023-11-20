@@ -1,0 +1,19 @@
+// protoc -I=. --python_out=. ./addressbook.proto
+
+syntax = "proto3";
+
+package options;
+
+
+message ImageOptions {
+    int32 width_min = 1;
+    repeated int32 tuple_winStride = 2;
+    repeated int32 tuple_padding = 3;
+    float scale = 4;
+}
+
+message ServiceOptions {
+    string address = 1;
+    repeated int32 cameras = 2;
+    ImageOptions images = 3;
+}
