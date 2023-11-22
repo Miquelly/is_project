@@ -1,17 +1,16 @@
-import socket
 import sys
+import socket
 from typing import Tuple
 
 import cv2
 import numpy as np
 import numpy.typing as npt
-from google.protobuf.json_format import Parse
-from google.protobuf.message import Message as PbMessage
 from is_msgs.image_pb2 import Image
-from is_wire.core import Channel, Message, Subscription
-
-from is_project.conf.options_pb2 import ServiceOptions
 from is_project.detector import Detector
+from google.protobuf.json_format import Parse
+from is_project.conf.options_pb2 import ServiceOptions
+from is_wire.core import Channel, Message, Subscription
+from google.protobuf.message import Message as PbMessage
 
 
 class StreamChannel(Channel):

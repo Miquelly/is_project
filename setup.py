@@ -11,7 +11,8 @@ setup(
     package_dir={"": "."},
     entry_points={
         "console_scripts": [
-            "is-project=is_project.main:main",
+            "is-project-stream=is_project.main:main",
+            "is-project-rpc=is_project.rpc:main",
         ],
     },
     zip_safe=False,

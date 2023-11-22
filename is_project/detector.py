@@ -2,7 +2,7 @@ import cv2
 import imutils
 import numpy as np
 import numpy.typing as npt
-from typing import List, Sequence
+from typing import List, Sequence, Tuple
 from is_msgs.image_pb2 import ObjectAnnotations
 
 
@@ -18,7 +18,8 @@ class Detector:
         self.winStride = (images.tuple_winStride[0], images.tuple_winStride[1])
         self.padding = (images.tuple_padding[0], images.tuple_padding[1])
 
-    def detect(self, image: npt.NDArray[np.uint8]) -> List[Sequence, Sequence[float]]:
+    def detect(self, image: npt.NDArray[np.uint8]) -> Tuple[Sequence, Sequence[float]]:
+        # def detect(self, image: npt.NDArray[np.uint8]):
         """
         Detect people in an input image using a Histogram of Oriented Gradients (HOG) detector.
 
